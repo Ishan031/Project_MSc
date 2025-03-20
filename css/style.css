@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Playfair Display', serif;
+
+}
+
+html{
+    font-size: 65.5%;
+}
+
+:root{
+    --main-color:#d30d0d;
+    --text-color: #141622;
+}
+
+/*=== top header section start ===*/
+.top-header .out-box{
+    width: 100%;
+    background: var(--main-color);
+}
+
+.top-header .out-box .inside-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #141622;
+    padding: 1rem 0; 
+    clip-path: polygon(8% 0%, 92% 0%, 96% 100%, 5% 100%);
+}
+
+.out-box .inside-box .col-1{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    color: #ffff;
+    margin-left: 13rem;
+}
+
+.out-box .inside-box .col-1 span{
+    font-size: 1.5rem;
+}
+
+.out-box .inside-box .col-1 span i{
+    color: var(--main-color);
+    padding-right: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.out-box .inside-box .col-2{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    color: #ffff;
+    margin-right: 13rem;
+}
+
+.out-box .inside-box .col-2 a,
+.out-box .inside-box .col-2 span,
+.out-box .inside-box .col-2 .social i{
+    color: #ffff;
+    font-size: 1.5rem;
+    transition: 0.4s;
+}
+
+.out-box .inside-box .col-2 .social {
+    display: flex;
+    gap: 0.9rem;
+}
+
+.out-box .inside-box .col-2 a i{
+    padding-right: 0.5rem;
+}
+
+.out-box .inside-box .col-2 .social i:hover,
+.out-box .inside-box .col-2 a:hover{
+    color: var(--main-color);
+}
+
+/*=== media query ===*/
+@media(max-width:1150px){
+    .out-box .inside-box .col-1{
+        margin-left: 8rem;
+    }
+
+    .out-box .inside-box .col-2{
+        margin-right: 8rem;
+    }
+}
+
+@media(max-width:991px){
+    .top-header{
+        display: none;
+    }
+}
+
+/*=== navbar sections start ===*/
+.header{
+    width: 100%;
+    position: sticky;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 9.5%;
+    background: #ffff;
+    box-shadow: 0 0 5px rgba(190,190,190,0.5),
+    0 0 10px rgba(190,190,190,0.5);
+    z-index: 111;
+    transition: 0.4s ease;
+}
+
+.header.sticky{
+    padding:0 9.5%;
+}
+
+.header .logo img{
+    width: 200px;
+}
+
+.header nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav .navbar ul li{
+    padding: 2.5rem 0.5rem;
+}
+
+nav .navbar .navLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+nav .navbar .navLink li a{
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+    position: relative;
+}
+
+nav .others{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav .others i{
+    font-size: 1.9rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+nav .others .addBtn{
+    position: relative;
+    color: #ffff;
+    background: var(--main-color);
+    padding: 1.5rem 1.7rem;
+    font-size: 1.6rem;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+nav .others .addBtn:hover{
+    background: var(--text-color);
+    color: #ffff;
+}
+
+nav .others .addBtn i,
+nav .others .addBtn i:hover{
+    color: #ffff;
+    padding-right: 0.5rem;
+}
+
+#menuBtn{
+    font-size: 3.5rem;
+}
+
+nav .navbar ul li:hover,
+nav .others i:hover{
+    color: var(--main-color);
+}
+
+nav .navbar ul li a:hover,
+nav .navbar ul li a.active{
+    color: var(--main-color);
+}
+
+nav .navbar ul li .drop-down{
+    position: absolute;
+    top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    width: 180px;
+    background: #ffff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(190,190,190,0.5);
+    padding: 1rem 0 0;
+    display: none;
+}
+
+nav .navbar ul li:hover .drop-down{
+    display: flex;
+}
+
+nav .navbar ul li .drop-down li{
+    border-bottom: 1px solid rgba(190,190,190,0.5);
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    z-index: 100;
+    overflow: hidden;
+}
+
+nav .navbar ul li .drop-down li a {
+    font-size: 1.5rem;
+    transition: 0.4s ease;
+}
+
+nav .navbar ul li .drop-down li:hover a{
+    font-size: 1.6rem;
+    padding-left: 0.5rem;
+}
+
+.drop-down li .drop-down-four,
+.drop-down li .drop-down-three,
+.drop-down li .drop-down-two{
+    width: 180px;
+    position: absolute;
+    left: 180px;
+    margin-top: -3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    background: #ffff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(190,190,190,0.5);
+    padding: 1rem 0 0;
+    z-index: 111;
+    overflow: hidden;
+    display: none;
+}
+
+
+.drop-down li:hover .drop-down-four,
+.drop-down li:hover .drop-down-three,
+.drop-down li:hover .drop-down-two{
+    display: flex;
+}
+
+.drop-down li.chev{
+    position: absolute;
+    left: 150px;
+    top: 5px;
+    color: var(--text-color);
+}
+
+/*=== media query ===*/
+@media(max-width:1370px){
+    nav .navbar ul li{
+        padding: 2.5rem 0;
+    }
+
+    nav .others{
+        gap: 1rem;
+    }
+
+    nav .navbar .navLink{
+        gap: 0.5rem;
+    }
+}
+
+@media(max-width:1190px){
+    nav .others .addBtn{
+        display: none;
+    }
+}
+
+@media(max-width:991px){
+    nav .navbar .navLink{
+        position: absolute;
+        display: block;
+        top: 5.3rem;
+        width: 100%;
+        left: 0px;
+        background: #ffff;
+        box-shadow: 0 0 5px rgba(190,190,190,0.5),
+        0 0 10px rgba(190,190,190,0.5);
+        padding-left: 30px;
+        transition: 0.5s ease-in-out;
+        display: none;
+    }
+
+    nav .navbar .navLink.active{
+        display: block;
+    }
+
+    .header.sticky{
+        padding: 0.6rem 9.5%;
+    }
+
+    nav .navbar ul li{
+        padding: 1rem 0;
+    }
+
+    nav .navbar ul li .drop-down{
+        position: sticky;
+        display: none;
+    }
+
+    .drop-down li:hover .drop-down-four,
+    .drop-down li:hover .drop-down-three,
+    .drop-down li:hover .drop-down-two{
+        position: sticky;
+        margin-top: 0rem;
+    }
+
+    nav .others i.cart{
+        display: none;
+    }
+}
+
+@media(max-width:420px){
+    .header .logo img{
+        width: 120px;
+    }
+
+    nav .navbar .navLink{
+        top: 4.6rem;
+    }
+}
+
+/*=== Home section start ===*/
+.home .slide{
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15rem;
+}
+
+.home .slide.slide-one{
+   background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.8), rgba(255,0,0)), url(../img/home/bg-hero-1.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+.home .slide.slide-two{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8),rgba(0,0,0,0.8), rgba(235,235,37)), url(../img/home/bg-hero-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+ }
+
+ .home .slide.slide-three{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8),rgba(0,0,0,0.8), rgba(43,171,235)), url(../img/home/bg-hero-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+ }
+
+ .home .slide .col-1{
+    flex: 1 1 20rem;
+ }
+
+ .home .slide .col-2{
+    flex: 1 1 40rem;
+    padding-top: 3rem;
+}
+
+.home .slide .col-1 h4{
+    font-size: 2.5 rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 3rem;
+}
+
+.home .slide .col-1 h1{
+    color: #ffff;
+    font-size: 5.2rem;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+}
+
+.home .slide .col-1 h1 span{
+    color: var(--main-color); 
+}
+
+.home .slide .col-1 p{
+    color: #ffff;
+    font-size: 1.4rem;
+    padding-top: 2rem;
+    letter-spacing: 2px;
+}
+
+.home .slide .col-1 .button{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 4rem;
+}
+
+.home .slide .col-1 .button button{
+    padding: 1.8rem 2.8rem 1.8rem 2rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5 ease;
+}
+
+.home .slide .col-1 .button i{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 33%;
+    right: -1rem;
+    transform: translate(-40%);
+}
+
+.home .slide .col-1 .button button.about{
+    background: var(--main-color);
+    color: #ffff;
+}
+
+.home .slide .col-1 .button button.learn{
+    background: #ffff;
+    color: var(--main-color);
+}
+
+.home .slide .col-1 .button button.about:hover,
+.home .slide .col-1 .button button.learn:hover{
+    background:var(--text-color);
+    color: #ffff;
+}
+
+.home .slide .col-2 img{
+    width: 100%;
+    height: 40rem;
+}
+
+.home .swiper [class*='swiper-button-']{
+    color: #ffff;
+    background-color: rgba(211, 13, 13, 0.5);
+    padding: 2.5rem;
+}
+
+home .swiper [class*='swiper-button-']:hover{
+    background: var(--main-color);
+}
+
+home .swiper [class*='swiper-button-'] ::before{
+    font-size: 2rem;
+}
