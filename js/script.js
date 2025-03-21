@@ -1,3 +1,4 @@
+
 /*=== navbar toggle ===*/
 let navBar = document.querySelector('.navLink');
 let menuBar = document.querySelector('#menuBtn');
@@ -31,3 +32,4 @@ var swiper = new Swiper(".myHome", {
       prevEl: ".swiper-button-prev",
     },
   });
+

@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Same head section as index.html -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- title -->
-    <title>LuxuryDrive</title>
-    <!-- swiper css link -->
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<!-- custom css file -->
-    <link rel="stylesheet" href="css\style.css">
-    <!-- boxicon cdn link -->
+    <title>Login - LuxuryDrive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
 </head>
 <body>
-    
-        <!-- top header section start -->
+    <!-- Same top header and navbar as index.html -->
+    <div class="top-header">
+        <!-- Copy top-header section from index.html -->
         <div class="top-header">
             <div class="out-box">
                 <div class="inside-box">
@@ -39,9 +35,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-        <!-- navbar section start -->
+    <header class="header">
+        <!-- Copy navbar section from index.html -->
         <header class="header">
             <div class="logo">
                 <img src="./img/logo/logo.png" alt="">
@@ -49,8 +46,8 @@
             <nav>
                 <div class="navbar">
                         <ul class="navLink">
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a href="#">Inventory <i class='bx bxs-chevron-down' ></i></a>
                             <ul class="drop-down">
                             <li><a href="#">Inventory Grid</a></li>
@@ -124,127 +121,48 @@
                 </div>
             </nav>
         </header>
+    </header>
 
-
-        <!-- home section start  -->
-        <div class="home">
-            <div class="swiper myHome">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide slide slide-one">
-
-                    <div class="col-1">
-                    <h4>Welcome to LuxuryDrive</h4>
-                    <h1>best way to find <br>your <span>dream</span>car</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, aut debitis animi eaque magni quaerat culpa fuga alias asperiores quidem corporis quisquam consectetur recusandae? Nihil qui minima consequuntur molestiae quia.
-                    </p>
-                       
-                        <div class="button">
-                        <button type="submit" class="about"><i class='bx bxs-right-arrow-alt'></i>About More</button>
-                        <button type="submit" class="learn"><i class='bx bxs-right-arrow-alt'></i>Learn More</button>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <img src="./img/home/hero-1.png" alt="">
-                    </div>
+    <!-- Login Form Section -->
+        <!-- Login Form -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Please login to your account</p>
                 </div>
-                  <div class="swiper-slide slide slide-two">
-                        <div class="col-1">
-                            <h4>Welcome to LuxuryDrive</h4>
-                            <h1>best way to find <br>your <span>dream</span>car</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nemo quia sapiente nisi iste assumenda deleniti dolorum.</p>
-                                <div class="button">
-                                <button type="submit" class="about"><i class='bx bxs-right-arrow-alt'></i>About More</button>
-                                <button type="submit" class="learn"><i class='bx bxs-right-arrow-alt'></i>Learn More</button>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <img src="./img/home/hero-2.png" alt="">
-                            </div>
-                  </div>
-                  <div class="swiper-slide slide slide-three">
-                        <div class="col-1">
-                            <h4>Welcome to LuxuryDrive</h4>
-                            <h1>best way to find <br>your <span>dream</span>car</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, aut debitis animi eaque magni quaerat culpa fuga alias asperiores quidem corporis quisquam consectetur recusandae? Nihil qui minima consequuntur molestiae quia.</p>
-                            
-                                <div class="button">
-                                <button type="submit" class="about"><i class='bx bxs-right-arrow-alt'></i>About More</button>
-                                <button type="submit" class="learn"><i class='bx bxs-right-arrow-alt'></i>Learn More</button>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <img src="./img/home/hero-3.png" alt="">
-                            </div>
-                  </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-              </div>
-        </div>
-
-        <!-- perfect section start -->
-
-
-        <!-- market section start -->
-
-
-        <!-- counter section start -->
-
-
-        <!-- body type section start -->
-
-
-        <!-- play button section start -->
-
-
-        <!-- dealer section start -->
-
-
-        <!-- Quality section start -->
-
-
-        <!-- band section start -->
-
-
-        <!-- client section start -->
-
-
-        <!-- download section start -->
-
-
-        <!-- footer section start -->
-
-
-        <!-- swiper js file link -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-        <!-- custom script file -->
-        <script src="./js/script.js"></script>   
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyC6-zAsP7QAMyZx3OKJdx5aF5f5edqJzp4",
-              authDomain: "luxurydrive-7ba79.firebaseapp.com",
-              projectId: "luxurydrive-7ba79",
-              storageBucket: "luxurydrive-7ba79.firebasestorage.app",
-              messagingSenderId: "777374237079",
-              appId: "1:777374237079:web:0182ea4c72cb47258d84d2",
-              measurementId: "G-JJPT639MC0"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-          </script>
-
-        
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        <i class='bx bx-lock-alt'></i>
+                    </div>
+                    <button type="submit" class="auth-btn">
+                        <i class='bx bxs-right-arrow-alt'></i>Login Now
+                    </button>
+                    <div class="form-footer">
+                        <span>Don't have an account? </span>
+                        <a href="register.html">Create Account</a>
+                    </div>
+                </form>
+                <div id="loginMessage" class="message"></div>
+            </div>
+        </section>
+    
+        <!-- Firebase and App Scripts -->
+        <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
+        <script src="js/auth.js"></script>
     </body>
+    </html>
+
+    <!-- Same scripts as index.html -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
 </html>
