@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+    <title>LuxuryDrive - Dashboard</title>
+    <!-- swiper css link -->
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- custom css file -->
+    <link rel="stylesheet" href="css\style.css">
+    <!-- boxicon cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body>
+    
+    <!-- top header section start -->
+    <div class="top-header">
+        <div class="out-box">
+            <div class="inside-box">
+                <div class="col-1">
+                    <span><i class='bx bxs-envelope' ></i>info@gmail.com</span>
+                    <span><i class='bx bxs-phone-call' ></i>+2 123 456 7890</span>
+                    <span><i class='bx bxs-alarm' ></i>Sun - Fri (08 AM - 10 PM)</span>
+                </div>
+                <div class="col-2">
+                    <a href="login.html">Login</a>
+                    <a href="Register.html">Register</a>
+                    <span>Follow Us:</span>
+                    <div class="social">
+                        <i class='bx bxl-facebook' ></i>
+                        <i class='bx bxl-twitter' ></i>
+                        <i class='bx bxl-instagram' ></i>
+                        <i class='bx bxl-linkedin' ></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar section start -->
+    <header class="header">
+        <div class="logo">
+            <img src="./img/logo/logo.png" alt="">
+        </div>
+        <nav>
+            <div class="navbar">
+                <ul class="navLink">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Inventory <i class='bx bxs-chevron-down' ></i></a>
+                        <ul class="drop-down">
+                            <li><a href="#">Inventory Grid</a></li>
+                            <li><a href="#">Inventory List</a></li>
+                            <li><a href="#">Inventory Single</a></li>
+                        </ul>
+                    <li><a href="#" class="active">Pages<i class='bx bxs-chevron-down chev' ></i></a>
+                        <ul class="drop-down">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#">Car Listing <i class='bx bxs-chevron-down chev'></i></a>
+                                <ul class="drop-down-two">
+                                    <li><a href="listing-grid.html">Listing Grid</a></li>
+                                    <li><a href="#">Listing List</a></li>
+                                    <li><a href="#">Listing Single</a></li>
+                                    <li><a href="#">Compare</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Account </i></a></li>
+                            <li><a href="#">My Account <i class='bx bxs-chevron-down chev'></i></a>
+                                <ul class="drop-down-three">
+                                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                                    <li><a href="#">My Profile</a></li>
+                                    <li><a href="#">My Listing</a></li>
+                                    <li><a href="#">Add Listing</a></li>
+                                    <li><a href="#">My Favourites</a></li>
+                                    <li><a href="#">Message</a></li>
+                                    <li><a href="#">Setting</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Authentication <i class='bx bxs-chevron-down chev' ></i></a>
+                                <ul class="drop-down-four">
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="Register.html">Register</a></li>
+                                    <li><a href="#">Forgot Password</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Dealer</a></li>
+                            <li><a href="#">Extra Pages</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Pricing Plan</a></li>
+                            <li><a href="#">Calculator</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Shop<i class='bx bxs-chevron-down' ></i></a>
+                        <ul class="drop-down">
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Shop Casting</a></li>
+                            <li><a href="#">Shop Checkout</a></li>
+                            <li><a href="#">Shop Single</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Blog<i class='bx bxs-chevron-down' ></i></a>
+                        <ul class="drop-down">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Blog Single</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="others">
+                <i class='bx bx-search' ></i>
+                <i class='bx bxs-cart-download cart' ></i>
+                <button class="addBtn"><i class='bx bxs-plus-circle' ></i>Add Listing</button>
+                <i class='bx bx-menu-alt-left' id="menuBtn"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard page title section -->
+    <div class="page-title">
+        <div class="title-bg">
+            <h1>My Dashboard</h1>
+            <div class="breadcrumb">
+                <span><a href="index.html">Home</a> / <a href="#">My Account</a> / Dashboard</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard section -->
+    <div class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="dashboard-sidebar">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h3>John Doe</h3>
+                        <p>Member since March 2025</p>
+                    </div>
+                </div>
+                <ul class="dashboard-menu">
+                    <li class="active"><a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+                    <li><a href="#"><i class='bx bxs-user-detail'></i>My Profile</a></li>
+                    <li><a href="#"><i class='bx bxs-car'></i>My Listings</a></li>
+                    <li><a href="#"><i class='bx bxs-plus-circle'></i>Add Listing</a></li>
+                    <li><a href="#"><i class='bx bxs-bookmark'></i>Bookings</a></li>
+                    <li><a href="#"><i class='bx bxs-heart'></i>My Favorites</a></li>
+                    <li><a href="#"><i class='bx bxs-message-detail'></i>Messages</a></li>
+                    <li><a href="#"><i class='bx bxs-cog'></i>Settings</a></li>
+                    <li><a href="#" class="logout"><i class='bx bxs-log-out'></i>Logout</a></li>
+                </ul>
+            </div>
+            <div class="dashboard-content">
+                <div class="welcome-card">
+                    <div class="welcome-text">
+                        <h2>Welcome back, John!</h2>
+                        <p>Here's what's happening with your car rental account today.</p>
+                    </div>
+                    <div class="welcome-action">
+                        <button class="add-car-btn"><i class='bx bxs-plus-circle'></i>Add New Car</button>
+                    </div>
+                </div>
+                
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class='bx bxs-car'></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Active Listings</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class='bx bxs-calendar-check'></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Total Bookings</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class='bx bxs-heart'></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <p>Favorites</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class='bx bxs-wallet'></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>$2,580</h3>
+                            <p>Total Earnings</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-sections">
+                    <div class="recent-activity">
+                        <div class="section-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon"><i class='bx bxs-calendar-plus'></i></div>
+                                <div class="activity-details">
+                                    <h4>New Booking Received</h4>
+                                    <p>BMW X5 has been booked by Alex Johnson</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon"><i class='bx bxs-message-alt-detail'></i></div>
+                                <div class="activity-details">
+                                    <h4>New Message</h4>
+                                    <p>You have received a new message from Sarah Williams</p>
+                                    <span class="activity-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon"><i class='bx bxs-star'></i></div>
+                                <div class="activity-details">
+                                    <h4>New Review</h4>
+                                    <p>Michael Brown left a 5-star review on your Mercedes C-Class</p>
+                                    <span class="activity-time">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon"><i class='bx bxs-check-circle'></i></div>
+                                <div class="activity-details">
+                                    <h4>Booking Completed</h4>
+                                    <p>Audi A4 booking has been completed</p>
+                                    <span class="activity-time">3 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="my-cars">
+                        <div class="section-header">
+                            <h3>My Cars</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="cars-list">
+                            <div class="car-item">
+                                <div class="car-image">
+                                    <img src="./img/dashboard/car-1.jpg" alt="BMW X5">
+                                    <span class="car-status active">Active</span>
+                                </div>
+                                <div class="car-details">
+                                    <h4>BMW X5</h4>
+                                    <div class="car-meta">
+                                        <span><i class='bx bxs-calendar'></i>2023</span>
+                                        <span><i class='bx bxs-gas-pump'></i>Petrol</span>
+                                    </div>
+                                    <div class="car-price">
+                                        <span>$80/day</span>
+                                    </div>
+                                    <div class="car-actions">
+                                        <a href="#" class="edit-btn"><i class='bx bxs-edit'></i></a>
+                                        <a href="#" class="delete-btn"><i class='bx bxs-trash'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="car-item">
+                                <div class="car-image">
+                                    <img src="./img/dashboard/car-2.jpg" alt="Mercedes C-Class">
+                                    <span class="car-status active">Active</span>
+                                </div>
+                                <div class="car-details">
+                                    <h4>Mercedes C-Class</h4>
+                                    <div class="car-meta">
+                                        <span><i class='bx bxs-calendar'></i>2022</span>
+                                        <span><i class='bx bxs-gas-pump'></i>Hybrid</span>
+                                    </div>
+                                    <div class="car-price">
+                                        <span>$75/day</span>
+                                    </div>
+                                    <div class="car-actions">
+                                        <a href="#" class="edit-btn"><i class='bx bxs-edit'></i></a>
+                                        <a href="#" class="delete-btn"><i class='bx bxs-trash'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="car-item">
+                                <div class="car-image">
+                                    <img src="./img/dashboard/car-3.jpg" alt="Audi A4">
+                                    <span class="car-status">Booked</span>
+                                </div>
+                                <div class="car-details">
+                                    <h4>Audi A4</h4>
+                                    <div class="car-meta">
+                                        <span><i class='bx bxs-calendar'></i>2023</span>
+                                        <span><i class='bx bxs-gas-pump'></i>Diesel</span>
+                                    </div>
+                                    <div class="car-price">
+                                        <span>$65/day</span>
+                                    </div>
+                                    <div class="car-actions">
+                                        <a href="#" class="edit-btn"><i class='bx bxs-edit'></i></a>
+                                        <a href="#" class="delete-btn"><i class='bx bxs-trash'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section start -->
+    <!-- (Add your footer code here) -->
+
+    <!-- swiper js file link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- custom script file -->
+    <script src="./js/script.js"></script>
+    
+</body>
+</html>

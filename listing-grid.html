@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-    <!-- Header Section (Same as Index) -->
+    <!-- Top Header and Navbar (Copy from index.html) -->
     <div class="top-header">
         <!-- Copy from index.html -->
         <div class="top-header">
@@ -36,7 +36,7 @@
         </div>
     </div>
     <header class="header">
-        <!-- Copy navbar from index.html -->
+        <!-- Copy from index.html -->
         <header class="header">
             <div class="logo">
                 <img src="./img/logo/logo.png" alt="">
@@ -45,7 +45,7 @@
                 <div class="navbar">
                         <ul class="navLink">
                         <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="#">Inventory <i class='bx bxs-chevron-down' ></i></a>
                             <ul class="drop-down">
                             <li><a href="#">Inventory Grid</a></li>
@@ -66,7 +66,7 @@
                                 <li><a href="#">Account </i></a></li>
                                 <li><a href="#">My Account <i class='bx bxs-chevron-down chev'></i></a>
                                     <ul class="drop-down-three">
-                                        <li><a href="#">Dashboard</a></li>
+                                        <li><a href="Dashboard.html">Dashboard</a></li>
                                         <li><a href="#">My Profile</a></li>
                                         <li><a href="#">My Listing</a></li>
                                         <li><a href="#">Add Listing</a></li>
@@ -130,105 +130,231 @@
                     <h3>Filter By</h3>
                     <div class="filter-group">
                         <h4>Price Range</h4>
-                        <input type="range" min="50" max="1000" value="1000" class="price-range">
+                        <input type="range" id="priceRange" min="50" max="1000" value="1000">
                         <div class="range-values">
                             <span>$50</span>
-                            <span>$1000</span>
+                            <span id="maxPrice">$1000</span>
                         </div>
                     </div>
                     
                     <div class="filter-group">
                         <h4>Car Type</h4>
                         <label class="filter-option">
-                            <input type="checkbox"> Sedan
+                            <input type="checkbox" value="Sedan"> Sedan
                         </label>
                         <label class="filter-option">
-                            <input type="checkbox"> SUV
+                            <input type="checkbox" value="SUV"> SUV
                         </label>
                         <label class="filter-option">
-                            <input type="checkbox"> Sports
+                            <input type="checkbox" value="Sports"> Sports
                         </label>
                         <label class="filter-option">
-                            <input type="checkbox"> Luxury
+                            <input type="checkbox" value="Luxury"> Luxury
                         </label>
                     </div>
 
                     <div class="filter-group">
                         <h4>Features</h4>
                         <label class="filter-option">
-                            <input type="checkbox"> GPS Navigation
+                            <input type="checkbox" value="GPS"> GPS Navigation
                         </label>
                         <label class="filter-option">
-                            <input type="checkbox"> Bluetooth
+                            <input type="checkbox" value="Bluetooth"> Bluetooth
                         </label>
                         <label class="filter-option">
-                            <input type="checkbox"> Sunroof
+                            <input type="checkbox" value="Sunroof"> Sunroof
                         </label>
                     </div>
+
+                    <button id="applyFilters" class="filter-btn">Apply Filters</button>
+                    <button id="resetFilters" class="filter-btn outline">Reset Filters</button>
                 </div>
             </div>
 
-            <!-- Car Grid -->
-            <div class="car-grid">
-                <!-- Car Card 1 -->
-                <div class="car-card">
-                    <div class="car-image">
-                        <img src="https://source.unsplash.com/random/800x600?luxury-car" alt="Premium Sedan">
-                        <span class="price">$199/day</span>
-                    </div>
-                    <div class="car-details">
-                        <h3>Mercedes-Benz S-Class</h3>
-                        <div class="specs">
-                            <span><i class='bx bxs-car'></i> Sedan</span>
-                            <span><i class='bx bx-user'></i> 5 Seats</span>
-                            <span><i class='bx bxs-gas-pump'></i> Petrol</span>
-                        </div>
-                        <div class="features">
-                            <span><i class='bx bxs-wrench'></i> Automatic</span>
-                            <span><i class='bx bxs-sun'></i> Sunroof</span>
-                        </div>
-                        <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
-                    </div>
-                </div>
-
-                <!-- Repeat similar car cards (11 more examples) -->
-                <!-- Car Card 2 -->
-                <div class="car-card">
-                    <div class="car-image">
-                        <img src="https://source.unsplash.com/random/800x600?suv" alt="Family SUV">
-                        <span class="price">$149/day</span>
-                    </div>
-                    <div class="car-details">
-                        <h3>Range Rover Velar</h3>
-                        <div class="specs">
-                            <span><i class='bx bxs-car'></i> SUV</span>
-                            <span><i class='bx bx-user'></i> 7 Seats</span>
-                            <span><i class='bx bxs-gas-pump'></i> Diesel</span>
-                        </div>
-                        <div class="features">
-                            <span><i class='bx bxs-wrench'></i> Automatic</span>
-                            <span><i class='bx bxs-snowflake'></i> A/C</span>
-                        </div>
-                        <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
-                    </div>
-                </div>
-
-                <!-- Add 10 more car cards following same structure -->
-            </div>
+    <!-- Car Grid -->
+<div class="car-grid">
+    <!-- Car 1: Mercedes-Benz S-Class -->
+    <div class="car-card" data-price="199" data-type="Sedan" data-features="GPS,Bluetooth">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mercedes-Benz S-Class">
+            <span class="price">$199/day</span>
         </div>
+        <div class="car-details">
+            <h3>Mercedes-Benz S-Class</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> Sedan</span>
+                <span><i class='bx bx-user'></i> 5 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Petrol</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-sun'></i> Sunroof</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Car 2: Range Rover Velar -->
+    <div class="car-card" data-price="149" data-type="SUV" data-features="GPS,Sunroof">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Range Rover Velar">
+            <span class="price">$149/day</span>
+        </div>
+        <div class="car-details">
+            <h3>Range Rover Velar</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> SUV</span>
+                <span><i class='bx bx-user'></i> 7 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Diesel</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-snowflake'></i> A/C</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Car 3: Porsche 911 -->
+    <div class="car-card" data-price="249" data-type="Sports" data-features="GPS,Bluetooth,Sunroof">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Porsche 911">
+            <span class="price">$249/day</span>
+        </div>
+        <div class="car-details">
+            <h3>Porsche 911</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> Sports</span>
+                <span><i class='bx bx-user'></i> 2 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Petrol</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-sun'></i> Sunroof</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Car 4: Audi A8 -->
+    <div class="car-card" data-price="179" data-type="Sedan" data-features="GPS,Bluetooth">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Audi A8">
+            <span class="price">$179/day</span>
+        </div>
+        <div class="car-details">
+            <h3>Audi A8</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> Sedan</span>
+                <span><i class='bx bx-user'></i> 5 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Petrol</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-sun'></i> Sunroof</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Car 5: BMW X5 -->
+    <div class="car-card" data-price="169" data-type="SUV" data-features="GPS,Bluetooth,Sunroof">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="BMW X5">
+            <span class="price">$169/day</span>
+        </div>
+        <div class="car-details">
+            <h3>BMW X5</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> SUV</span>
+                <span><i class='bx bx-user'></i> 7 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Diesel</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-sun'></i> Sunroof</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Car 6: Tesla Model S -->
+    <div class="car-card" data-price="299" data-type="Sedan" data-features="GPS,Bluetooth">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Tesla Model S">
+            <span class="price">$299/day</span>
+        </div>
+        <div class="car-details">
+            <h3>Tesla Model S</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> Sedan</span>
+                <span><i class='bx bx-user'></i> 5 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Electric</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-sun'></i> Sunroof</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Car 7: Lamborghini Huracan -->
+    <div class="car-card" data-price="499" data-type="Sports" data-features="GPS,Bluetooth">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Lamborghini Huracan">
+            <span class="price">$499/day</span>
+        </div>
+        <div class="car-details">
+            <h3>Lamborghini Huracan</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> Sports</span>
+                <span><i class='bx bx-user'></i> 2 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Petrol</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-sun'></i> Sunroof</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Car 8: Ford Mustang -->
+    <div class="car-card" data-price="199" data-type="Sports" data-features="GPS,Bluetooth">
+        <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ford Mustang">
+            <span class="price">$199/day</span>
+        </div>
+        <div class="car-details">
+            <h3>Ford Mustang</h3>
+            <div class="specs">
+                <span><i class='bx bxs-car'></i> Sports</span>
+                <span><i class='bx bx-user'></i> 4 Seats</span>
+                <span><i class='bx bxs-gas-pump'></i> Petrol</span>
+            </div>
+            <div class="features">
+                <span><i class='bx bxs-wrench'></i> Automatic</span>
+                <span><i class='bx bxs-sun'></i> Sunroof</span>
+            </div>
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Add 4 more cars here to reach 12 cars total -->
+</div>
 
         <!-- Pagination -->
         <div class="pagination">
-            <a href="#"><i class='bx bx-chevron-left'></i></a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#"><i class='bx bx-chevron-right'></i></a>
+            <a href="#" class="page-link" data-page="1">1</a>
+            <a href="#" class="page-link" data-page="2">2</a>
+            <a href="#" class="page-link" data-page="3">3</a>
         </div>
     </section>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/filters.js"></script>
 </body>
 </html>
