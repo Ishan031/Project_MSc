@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LuxuryDrive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Top Header (Copy from index.html) -->
+    <div class="top-header">
+        <!-- Copy from index.html -->
+        <div class="top-header">
+            <div class="out-box">
+                <div class="inside-box">
+                    <div class="col-1">
+                        <span><i class='bx bxs-envelope' ></i>LuxuryDrive@gmail.com</span>
+                        <span><i class='bx bxs-phone-call' ></i>+2 123 456 7890</span>
+                        <span><i class='bx bxs-alarm' ></i>Sun - Fri (08 AM - 10 PM)</span>
+                    </div>
+                    <div class="col-2">
+                        <a href="login.html">Login</a>
+                        <a href="Register.html">Register</a>
+                        <span>Follow Us:</span>
+                        <div class="social">
+                            <i class='bx bxl-facebook' ></i>
+                            <i class='bx bxl-twitter' ></i>
+                            <i class='bx bxl-instagram' ></i>
+                            <i class='bx bxl-linkedin' ></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navbar (Copy from index.html) -->
+    <header class="header">
+        <!-- Copy from index.html -->
+              <!-- navbar section start -->
+              <header class="header">
+                <div class="logo">
+                    <img src="./img/logo/logo.svg" alt="">
+                </div>
+                <nav>
+                    <div class="navbar">
+                            <ul class="navLink">
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#">Inventory<i class='bx bxs-chevron-down' ></i></a>
+                                <ul class="drop-down">
+                                <li><a href="#">Inventory Grid</a></li>
+                                <li><a href="#">Inventory List</a></li>
+                                </ul>
+                            <li><a href="#">Pages<i class='bx bxs-chevron-down chev' ></i></a>
+                                <ul class="drop-down">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Car Listing <i class='bx bxs-chevron-down chev'></i></a>
+                                        <ul class="drop-down-two">
+                                            <li><a href="listing-grid.html">Listing Grid</a></li>
+                                            <li><a href="#">Listing List</a></li>
+                                            <li><a href="#">Compare</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Account </i></a></li>
+                                    <li><a href="#">My Account <i class='bx bxs-chevron-down chev'></i></a>
+                                        <ul class="drop-down-three">
+                                            <li><a href="Dashboard.html">Dashboard</a></li>
+                                            <li><a href="#">My Profile</a></li>
+                                            <li><a href="#">My Listing</a></li>
+                                            <li><a href="#">Add Listing</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Authentication <i class='bx bxs-chevron-down chev' ></i></a>
+                                        <ul class="drop-down-four">
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="Register.html">Register</a></li>
+                                            <li><a href="#">Forgot Password</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Testimonials</a></li>
+                                </ul>
+    
+                            </li>
+                            <li><a href="blog.html">Blog</a>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="others">
+                        <i class='bx bx-search' ></i>
+                        <i class='bx bxs-cart-download cart' ></i>
+                        <button class="addBtn"><i class='bx bxs-plus-circle' ></i>Add Listing</button>
+                        <i class='bx bx-menu-alt-left' id="menuBtn"></i>
+                    </div>
+                </nav>
+            </header>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you! Whether you have a question about our services, need assistance, or just want to say hello, feel free to reach out.</p>
+                
+                <div class="info-box">
+                    <i class='bx bxs-map'></i>
+                    <div class="info-text">
+                        <h3>Visit Us</h3>
+                        <p>123 Luxury Drive,<br>New York, NY 10001, USA</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <i class='bx bxs-phone'></i>
+                    <div class="info-text">
+                        <h3>Call Us</h3>
+                        <p>+1 234 567 890</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <i class='bx bxs-envelope'></i>
+                    <div class="info-text">
+                        <h3>Email Us</h3>
+                        <p>info@luxurydrive.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message <i class='bx bxs-right-arrow-alt'></i></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617539259271!2d-73.98773168459413!3d40.74844447932801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b30eac9f%3A0xaca05ca48ab5ac2c!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1695671234567!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

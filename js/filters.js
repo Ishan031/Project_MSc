@@ -11,36 +11,71 @@ document.addEventListener('DOMContentLoaded', () => {
         maxPriceDisplay.textContent = `$${priceRange.value}`;
     });
 
-    // Apply Filters
-    applyFiltersBtn.addEventListener('click', () => {
-        const selectedPrice = parseInt(priceRange.value);
-        const selectedTypes = Array.from(document.querySelectorAll('.filter-option input[type="checkbox"]:checked')).map(cb => cb.value);
-        const selectedFeatures = Array.from(document.querySelectorAll('.filter-option input[type="checkbox"]:checked')).map(cb => cb.value);
+ // Update max price display
+ priceRange.addEventListener('input', () => {
+    maxPriceDisplay.textContent = `$${priceRange.value}`;
+});
 
-        cars.forEach(car => {
-            const carPrice = parseInt(car.getAttribute('data-price'));
-            const carType = car.getAttribute('data-type');
-            const carFeatures = car.getAttribute('data-features').split(',');
+// Apply Filters (Fixed)
+applyFiltersBtn.addEventListener('click', () => {
+    const selectedPrice = parseInt(priceRange.value);
+    
+    // Get selected types from the "Car Type" section
+    const selectedTypes = Array.from(
+        document.querySelectorAll('.filter-group:nth-child(2) .filter-option input:checked')
+    ).map(cb => cb.value);
+    
+    // Get selected features from the "Features" section
+    const selectedFeatures = Array.from(
+        document.querySelectorAll('.filter-group:nth-child(3) .filter-option input:checked')
+    ).map(cb => cb.value);
 
-            const priceMatch = carPrice <= selectedPrice;
-            const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(carType);
-            const featureMatch = selectedFeatures.length === 0 || selectedFeatures.every(feature => carFeatures.includes(feature));
+    cars.forEach(car => {
+        const carPrice = parseInt(car.dataset.price);
+        const carType = car.dataset.type;
+        const carFeatures = car.dataset.features.split(',').map(f => f.trim());
 
-            if (priceMatch && typeMatch && featureMatch) {
-                car.style.display = 'block';
-            } else {
-                car.style.display = 'none';
-            }
-        });
+        // Price match
+        const priceMatch = carPrice <= selectedPrice;
+        
+        // Type match (if any types selected)
+        const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(carType);
+        
+        // Feature match (if any features selected)
+        const featureMatch = selectedFeatures.length === 0 || 
+                           selectedFeatures.some(feature => carFeatures.includes(feature));
+
+        if (priceMatch || typeMatch || featureMatch) {
+            car.style.display = 'block';
+        } else {
+            car.style.display = 'none';
+        }
+    });
+});
+
+// Reset Filters (Fixed)
+resetFiltersBtn.addEventListener('click', () => {
+    // Reset price range
+    priceRange.value = 1000;
+    maxPriceDisplay.textContent = '$1000';
+
+    // Uncheck all checkboxes
+    document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
     });
 
-    // Reset Filters
-    resetFiltersBtn.addEventListener('click', () => {
-        priceRange.value = 1000;
-        maxPriceDisplay.textContent = '$1000';
-        document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => cb.checked = false);
-        cars.forEach(car => car.style.display = 'block');
+    // Show all cars
+    cars.forEach(car => {
+        car.style.display = 'block';
     });
+});
+
+// Debugging: Log initial state
+console.log("Filters script loaded successfully!");
+console.log("Cars found:", cars.length);
+console.log("Apply Filters Button:", applyFiltersBtn);
+console.log("Reset Filters Button:", resetFiltersBtn);
+});
 
     // Pagination
     pageLinks.forEach(link => {
@@ -67,4 +102,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show first page by default
     pageLinks[0].click();
-});

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Booking - LuxuryDrive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- Date Picker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- Top Header (Copy from index.html) -->
+    <div class="top-header">
+        <!-- Copy from index.html -->
+        <div class="top-header">
+            <div class="out-box">
+                <div class="inside-box">
+                    <div class="col-1">
+                        <span><i class='bx bxs-envelope' ></i>LuxuryDrive@gmail.com</span>
+                        <span><i class='bx bxs-phone-call' ></i>+2 123 456 7890</span>
+                        <span><i class='bx bxs-alarm' ></i>Sun - Fri (08 AM - 10 PM)</span>
+                    </div>
+                    <div class="col-2">
+                        <a href="login.html">Login</a>
+                        <a href="Register.html">Register</a>
+                        <span>Follow Us:</span>
+                        <div class="social">
+                            <i class='bx bxl-facebook' ></i>
+                            <i class='bx bxl-twitter' ></i>
+                            <i class='bx bxl-instagram' ></i>
+                            <i class='bx bxl-linkedin' ></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navbar (Copy from index.html) -->
+    <header class="header">
+        <!-- Copy from index.html -->
+              <!-- navbar section start -->
+              <header class="header">
+                <div class="logo">
+                    <img src="./img/logo/logo.svg" alt="">
+                </div>
+                <nav>
+                    <div class="navbar">
+                            <ul class="navLink">
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#">Inventory<i class='bx bxs-chevron-down' ></i></a>
+                                <ul class="drop-down">
+                                <li><a href="#">Inventory Grid</a></li>
+                                <li><a href="#">Inventory List</a></li>
+                                </ul>
+                            <li><a href="#">Pages<i class='bx bxs-chevron-down chev' ></i></a>
+                                <ul class="drop-down">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Car Listing <i class='bx bxs-chevron-down chev'></i></a>
+                                        <ul class="drop-down-two">
+                                            <li><a href="listing-grid.html">Listing Grid</a></li>
+                                            <li><a href="#">Listing List</a></li>
+                                            <li><a href="#">Compare</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Account </i></a></li>
+                                    <li><a href="#">My Account <i class='bx bxs-chevron-down chev'></i></a>
+                                        <ul class="drop-down-three">
+                                            <li><a href="Dashboard.html">Dashboard</a></li>
+                                            <li><a href="#">My Profile</a></li>
+                                            <li><a href="#">My Listing</a></li>
+                                            <li><a href="#">Add Listing</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Authentication <i class='bx bxs-chevron-down chev' ></i></a>
+                                        <ul class="drop-down-four">
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="Register.html">Register</a></li>
+                                            <li><a href="#">Forgot Password</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Testimonials</a></li>
+                                </ul>
+    
+                            </li>
+                            <li><a href="blog.html">Blog</a>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="others">
+                        <i class='bx bx-search' ></i>
+                        <i class='bx bxs-cart-download cart' ></i>
+                        <button class="addBtn"><i class='bx bxs-plus-circle' ></i>Add Listing</button>
+                        <i class='bx bx-menu-alt-left' id="menuBtn"></i>
+                    </div>
+                </nav>
+            </header>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <!-- Rental Details -->
+            <div class="booking-form">
+                <h2>Complete Your Booking</h2>
+                <form id="bookingForm">
+                    <!-- Car Details (Auto-filled from listing grid) -->
+                    <div class="car-summary">
+                        <img src="" id="bookingCarImage" alt="Selected Car">
+                        <div>
+                            <h3 id="bookingCarName">Mercedes-Benz S-Class</h3>
+                            <p id="bookingCarPrice">$199/day</p>
+                        </div>
+                    </div>
+
+                    <!-- Rental Dates -->
+                    <div class="form-group">
+                        <label>Pickup & Return Dates</label>
+                        <input type="text" id="rentalDates" class="date-picker" placeholder="Select Dates" required>
+                    </div>
+
+                    <!-- Extra Services -->
+                    <div class="form-group">
+                        <label>Additional Services</label>
+                        <div class="extras">
+                            <label class="extra-option">
+                                <input type="checkbox" name="extra" value="insurance" data-daily-cost="15"> 
+                                Insurance ($15/day)
+                            </label>
+                            <label class="extra-option">
+                                <input type="checkbox" name="extra" value="gps" data-daily-cost="10"> 
+                                GPS Navigation ($10/day)
+                            </label>
+                            <label class="extra-option">
+                                <input type="checkbox" name="extra" value="child-seat" data-daily-cost="7"> 
+                                Child Seat ($7/day)
+                            </label>
+                        </div>
+                    </div>
+
+                                <!-- Payment Details -->
+                    <div class="form-group">
+                        <label>Payment Information</label>
+                        <div class="payment-card">
+                            <!-- Card Number -->
+                            <div class="payment-input">
+                                <input type="text" id="cardNumber" placeholder="Card Number" required>
+                                <i class='bx bxs-credit-card'></i>
+                                <span class="error-message">Invalid card number (16 digits required)</span>
+                            </div>
+
+                            <!-- Expiry Date & CVV -->
+                            <div class="payment-row">
+                                <div class="payment-input">
+                                    <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                                    <span class="error-message">Invalid expiry date (MM/YY format)</span>
+                                </div>
+                                <div class="payment-input">
+                                    <input type="text" id="cvv" placeholder="CVV" required>
+                                    <span class="error-message">Invalid CVV (3-4 digits)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing Address -->
+                    <div class="form-group">
+                        <label>Billing Address</label>
+                        <input type="text" id="street" placeholder="Street Address" required>
+                        <div class="address-row">
+                            <input type="text" id="city" placeholder="City" required>
+                            <input type="text" id="zip" placeholder="ZIP Code" required>
+                        </div>
+                    </div>
+
+                    <!-- Terms & Submit -->
+                    <div class="form-group terms">
+                        <label>
+                            <input type="checkbox" required> 
+                            I agree to the <a href="#">Terms & Conditions</a>
+                        </label>
+                        <button type="submit" class="confirm-btn">
+                            Confirm Booking <i class='bx bxs-check-circle'></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-details">
+                    <div class="summary-item">
+                        <span>Daily Rate:</span>
+                        <span>$199.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Rental Days:</span>
+                        <span id="daysCount">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Extras:</span>
+                        <span id="extrasTotal">$0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total:</span>
+                        <span id="totalAmount">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/booking.js"></script>
+</body>
+</html>
