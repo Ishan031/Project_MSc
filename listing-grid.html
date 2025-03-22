@@ -102,101 +102,119 @@
             </header>
     </header>
 
-    <!-- Listing Grid Section -->
-    <section class="listings">
-        <div class="listing-container">
-            <!-- Filter Section -->
-            <div class="filters">
-                <div class="filter-box">
-                    <h3>Filter By</h3>
-                    <div class="filter-group">
-                        <h4>Price Range</h4>
-                        <input type="range" id="priceRange" min="50" max="1000" value="1000">
-                        <div class="range-values">
-                            <span>$50</span>
-                            <span id="maxPrice">$1000</span>
+    <section class="listings" style="display: flex; gap: 20px; padding: 20px;">
+
+        <!-- Filter Section (Left) -->
+        <div class="filters" style="width: 250px; flex-shrink: 0;">
+            <div class="filter-box">
+                <h3>Filter By</h3>
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <input type="range" id="priceRange" min="50" max="1000" value="1000">
+                    <div class="range-values">
+                        <span>$50</span>
+                        <span id="maxPrice">$1000</span>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>Car Type</h4>
+                    <label class="filter-option"><input type="checkbox" value="Sedan" class="car-type"> Sedan</label>
+                    <label class="filter-option"><input type="checkbox" value="SUV" class="car-type"> SUV</label>
+                    <label class="filter-option"><input type="checkbox" value="Sports" class="car-type"> Sports</label>
+                    <label class="filter-option"><input type="checkbox" value="Luxury" class="car-type"> Luxury</label>
+                </div>
+    
+                <div class="filter-group">
+                    <h4>Features</h4>
+                    <label class="filter-option"><input type="checkbox" value="GPS" class="feature"> GPS Navigation</label>
+                    <label class="filter-option"><input type="checkbox" value="Bluetooth" class="feature"> Bluetooth</label>
+                    <label class="filter-option"><input type="checkbox" value="Sunroof" class="feature"> Sunroof</label>
+                </div>
+    
+                <button id="applyFilters" class="filter-btn">Apply Filters</button>
+                <button id="resetFilters" class="filter-btn outline">Reset Filters</button>
+            </div>
+        </div>
+    
+        <!-- Listings Display (Right) -->
+        <div style="flex-grow: 1;">
+            <div id="carListings" style="display: flex; flex-wrap: wrap; gap: 20px;"></div>
+        </div>
+    
+    </section>
+    
+    <script>
+        let cars = [];
+    
+        async function fetchCarData() {
+            try {
+                const response = await fetch("./data/cardetails.json");
+                cars = await response.json();
+                renderCars();
+            } catch (error) {
+                console.error("Error loading JSON data:", error);
+            }
+        }
+    
+        function renderCars() {
+            const selectedTypes = Array.from(document.querySelectorAll(".car-type:checked")).map(el => el.value);
+            const selectedFeatures = Array.from(document.querySelectorAll(".feature:checked")).map(el => el.value);
+            const maxPrice = document.getElementById("priceRange").value;
+    
+            const carListings = document.getElementById("carListings");
+            carListings.innerHTML = "";
+    
+            const filteredCars = cars.filter(car => 
+                (selectedTypes.length === 0 || selectedTypes.includes(car.type)) &&
+                (selectedFeatures.length === 0 || selectedFeatures.every(f => car.features.includes(f))) &&
+                (car.price <= maxPrice)
+            );
+    
+            if (filteredCars.length === 0) {
+                carListings.innerHTML = "<p>No cars match the selected filters.</p>";
+                return;
+            }
+    
+            filteredCars.forEach(car => {
+                const carDiv = document.createElement("div");
+                carDiv.className = "car-listing";
+                carDiv.innerHTML = `
+                    <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; width: 250px;">
+                        <div style="position: relative;">
+                            <img src="${car.image}" alt="${car.name}" style="width: 100%; height: 150px; object-fit: cover;">
+                            <span style="position: absolute; top: 10px; left: 10px; background: rgba(0, 0, 0, 0.6); color: white; padding: 5px; border-radius: 4px;">
+                                $${car.price}/day
+                            </span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <h3 style="margin: 5px 0;">${car.name}</h3>
+                            <p style="margin: 5px 0;"><i class='bx bxs-car'></i> ${car.type}</p>
+                            <p style="margin: 5px 0;"><i class='bx bx-user'></i> ${car.seats} Seats</p>
+                            <p style="margin: 5px 0;"><i class='bx bxs-gas-pump'></i> ${car.petrol}</p>
+                            <p style="margin: 5px 0;"><i class='bx bxs-wrench'></i> ${car.transmission}</p>
+                            <p style="margin: 5px 0;"><i class='bx bxs-sun'></i> ${car.features.join(", ")}</p>
+                            <a href="booking.html">
+                                <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="filter-group">
-                        <h4>Car Type</h4>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Sedan"> Sedan
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="SUV"> SUV
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Sports"> Sports
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Luxury"> Luxury
-                        </label>
-                    </div>
-
-                    <div class="filter-group">
-                        <h4>Features</h4>
-                        <label class="filter-option">
-                            <input type="checkbox" value="GPS"> GPS Navigation
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Bluetooth"> Bluetooth
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Sunroof"> Sunroof
-                        </label>
-                    </div>
-
-                    <button id="applyFilters" class="filter-btn">Apply Filters</button>
-                    <button id="resetFilters" class="filter-btn outline">Reset Filters</button>
-                </div>
-            </div>
-
-<!-- Car Grid -->
-<div class="car-grid" id="car-container"></div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        fetch('./data/cardetails.json')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('car-container');
-
-                data.map(car => {
-                    const carCard = document.createElement('div');
-                    carCard.classList.add('car-card');
-
-                    carCard.innerHTML = `
-                        <div class="car-card">
-    <div class="car-image">
-        <img src="${car.image}" alt="${car.name}">
-        <span class="price">$${car.price}/day</span>
-    </div>
-    <div class="car-details">
-        <h3>${car.name}</h3>
-        <div class="specs">
-            <span><i class='bx bxs-car'></i> ${car.type}</span>
-            <span><i class='bx bx-user'></i> ${car.seats} Seats</span>
-            <span><i class='bx bxs-gas-pump'></i> ${car.petrol}</span>
-        </div>
-        <div class="features">
-            <span><i class='bx bxs-wrench'></i> ${car.transmission}</span>
-            <span><i class='bx bxs-sun'></i> ${car.features.join(", ")}</span>
-        </div>
-        <a href="booking.html">
-            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
-        </a>
-    </div>
-</div>
-
-                    `;
-
-                    container.appendChild(carCard);
-                });
-            })
-            .catch(error => console.error('Error loading cars:', error));
-    });
-</script>
+                `;
+                carDiv.style.display = "block";
+                carListings.appendChild(carDiv);
+            });
+        }
+    
+        document.getElementById("applyFilters").addEventListener("click", renderCars);
+        document.getElementById("resetFilters").addEventListener("click", () => {
+            document.querySelectorAll("input[type=checkbox]").forEach(el => el.checked = false);
+            document.getElementById("priceRange").value = 1000;
+            renderCars();
+        });
+    
+        fetchCarData();
+    </script>
+    
   
         <!-- Pagination -->
         <div class="pagination">
