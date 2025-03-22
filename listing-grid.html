@@ -167,25 +167,28 @@
                     carCard.classList.add('car-card');
 
                     carCard.innerHTML = `
-                        <div class="car-image">
-                            <img src="${car.image}" alt="${car.name}">
-                            <span class="price">$${car.price}/day</span>
-                        </div>
-                        <div class="car-details">
-                            <h3>${car.name}</h3>
-                            <div class="specs">
-                                <span><i class='bx bxs-car'></i> ${car.type}</span>
-                                <span><i class='bx bx-user'></i> ${car.seats} Seats</span>
-                                <span><i class='bx bxs-gas-pump'></i> ${car.petrol}</span>
-                            </div>
-                            <div class="features">
-                                <span><i class='bx bxs-wrench'></i> ${car.transmission}</span>
-                                <span><i class='bx bxs-sun'></i> ${car.features.join(", ")}</span>
-                            </div>
-                            <a href="booking.html">
-                                <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
-                            </a>
-                        </div>
+                        <div class="car-card">
+    <div class="car-image">
+        <img src="${car.image}" alt="${car.name}">
+        <span class="price">$${car.price}/day</span>
+    </div>
+    <div class="car-details">
+        <h3>${car.name}</h3>
+        <div class="specs">
+            <span><i class='bx bxs-car'></i> ${car.type}</span>
+            <span><i class='bx bx-user'></i> ${car.seats} Seats</span>
+            <span><i class='bx bxs-gas-pump'></i> ${car.petrol}</span>
+        </div>
+        <div class="features">
+            <span><i class='bx bxs-wrench'></i> ${car.transmission}</span>
+            <span><i class='bx bxs-sun'></i> ${car.features.join(", ")}</span>
+        </div>
+        <a href="booking.html">
+            <button class="book-btn">Book Now <i class='bx bxs-right-arrow-alt'></i></button>
+        </a>
+    </div>
+</div>
+
                     `;
 
                     container.appendChild(carCard);
